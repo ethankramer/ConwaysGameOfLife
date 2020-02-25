@@ -20,3 +20,13 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   
   The game begins by randomly assigning half of the cells alive, thus allowing the game to begin (if all cells began as
   alive or dead, the game would end instantly).
+  
+  One modification I added to the graphics is a cell gradually turns from black to red the longer it is alive. For example, 
+  the first few generations will have mostly black cells, but the final generations will mostly be red cells, because the 
+  game is close to equilibrium, so very few cells are changing states.
+  
+  Included are 4 images from one randomly generated grid.
+    - gameOfLife(1) shows the inital condition/state of the grid. Half of the cells are alive.
+    - gameOfLife(2) and (3) shows some middle generations, some cells are beginning to turn red.
+    - gameOfLife(4) is the equilibrium of the game, most of the cells are red.
+    
