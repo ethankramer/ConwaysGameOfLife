@@ -25,6 +25,8 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   the first few generations will have mostly black cells, but the final generations will be mostly red cells, because the 
   game is close to equilibrium, so very few cells are changing states.
   
-  Included are 4 images from one randomly generated grid, aligned side by side, to demonstrate the transition between generations
-  and eventually reaching equilibrium in the final image (right most image).
+  GameOfLifeEXAMPLE.png is a sample of 4 images from one randomly generated grid, aligned side by side, to demonstrate the 
+  transition between generations and eventually reaching equilibrium in the final image (right most image).
+  
+    - These 4 generations are not consecutive, the process of reaching equilibrium can take hundreds to thousands of generations.
     
