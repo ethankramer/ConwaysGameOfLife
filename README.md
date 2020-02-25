@@ -26,6 +26,7 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   game is close to equilibrium, so very few cells are changing states.
   
   Included are 4 images from one randomly generated grid.
+  
     - gameOfLife(1) shows the inital condition/state of the grid. Half of the cells are alive.
     - gameOfLife(2) and (3) shows some middle generations, some cells are beginning to turn red.
     - gameOfLife(4) is the equilibrium of the game, most of the cells are red.
