@@ -6,7 +6,7 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
 
   - If a cell has less than 2 "alive" neighbors, the cell is dead/"dies"
     - Represents underpopulation
-  - If a cell is dead, but has 3 alive neighbprs, it is "revived"/alive
+  - If a cell is dead, but has 3 alive neighbors, it is "revived"/alive
     - Represents reproduction
   - If a cell has more than 3 alive neighbors, the cell is dead/"dies"
     - Represents overpopulation
@@ -21,7 +21,7 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   The game begins by randomly assigning half of the cells alive, thus allowing the game to begin (if all cells began as
   alive or dead, the game would end instantly).
   
-  One modification I added to the graphics is a cell gradually turns from black to red the longer it is alive. For example, 
+  One modification added to the graphics is a cell gradually turns from black to red the longer it is alive. For example, 
   the first few generations will have mostly black cells, but the final generations will be mostly red cells, because the 
   game is close to equilibrium, so very few cells are changing states.
   
