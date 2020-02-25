@@ -22,7 +22,7 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   alive or dead, the game would end instantly).
   
   One modification I added to the graphics is a cell gradually turns from black to red the longer it is alive. For example, 
-  the first few generations will have mostly black cells, but the final generations will mostly be red cells, because the 
+  the first few generations will have mostly black cells, but the final generations will be mostly red cells, because the 
   game is close to equilibrium, so very few cells are changing states.
   
   Included are 4 images from one randomly generated grid.
