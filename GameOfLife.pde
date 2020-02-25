@@ -3,8 +3,6 @@ import java.util.*;
 import java.lang.Math;
 
 static int Size = 100;
-//static int nCellsWidth = 100;
-//static int nCellsHeight = 100;
 static int cellSize = 5;
 
 Life life = new Life();
@@ -18,12 +16,8 @@ void setup()
 void draw() { 
   background(255);
   life.updateGame();
-
-  //h1.update(); 
-  //h2.update();
 } 
 
-//private static int Size;
 private static int N;
 private static Random randomGenerator;
 public class Cell {
@@ -42,9 +36,9 @@ public class Cell {
   }
 
   public Cell(int posX, int posY) {
-    // state: alive == true, dead == false
-    // label: index = y*Size + x
-    // initialize each cell as dead
+    state: alive == true, dead == false
+    label: index = y*Size + x
+    initialize each cell as dead
     state = false;
     x = posX;
     y = posY;
@@ -69,7 +63,6 @@ public class Life {
   public void display() {
     for (int j=0; j<Size; j++) {
       for (int k=0; k<Size; k++) {
-        //Cell c = current[j*Size+k];
         Cell c = board[j][k];
         if (c.state) {
           fill(Math.min(255,c.age),0,0);
@@ -81,16 +74,6 @@ public class Life {
 
   public void updateGame() {
     display();
-    //rect(0,0,10,10);
-    //for (int i=0; i<current.length; i++) {
-    //  Cell c = current[i];
-    //  Cell mine = updateCell(c);
-    //  future[i] = mine;
-    //}
-
-    //for (int i=0; i<current.length; i++) {
-    //  current[i] = future[i];
-    //}
      for (int j=0; j<Size; j++) {
       for (int k=0; k<Size; k++) {
         fBoard[j][k] = updateCell(board[j][k]);
@@ -116,24 +99,11 @@ public class Life {
       return 1;
     }
       return 0;
-    
-    
-    //if(c.x+offsetX<0 || c.y+offsetY<0||c.y+offsetY>=Size||c.x+offsetX>=Size){
-    //  return 0;
-    //}
-    ////return board[c.y+offsetY][c.x+offsetX].state?1:0;
-    //if(board[c.y+offsetY][c.x+offsetX].state){
-    //  return 1;
-    //}
-    //  return 0;
   }
 
   public  Cell updateCell(Cell c) {
-    //Cell d = new Cell(c.x, c.y);
-    //d.state = c.state;
-    //d.label = c.label;
     Cell d = new Cell(c);
-    int numAliveNeighbors; //=0;
+    int numAliveNeighbors;
     
     numAliveNeighbors = 
       checkCell(c,-1,-1)+
@@ -145,89 +115,11 @@ public class Life {
       checkCell(c,0,1)+
       checkCell(c,1,1);
 
-    //// Check all 8 neighbors, and update alive/dead state of current cell 'c'
-    //Cell myNeighbor;
-
-    ////check top-left neighbor
-    //int topLeft = c.label-Size-1;
-    //if (topLeft>=0) {
-    //  myNeighbor = current[topLeft];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check top neighbor
-    //int top = c.label-Size;
-    //if (top>=0) {
-    //  myNeighbor = current[top];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check top-right neighbor
-    //int topRight = c.label-Size+1;
-    //if (topRight>=0) {
-    //  myNeighbor = current[topRight];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check left neighbor
-    //int left = c.label-1;
-    //if (left>=0) {
-    //  myNeighbor = current[left];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check right neighbor
-    //int right = c.label+1;
-    //if (right<N) {
-    //  myNeighbor = current[right];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check bottom-left neighbor
-    //int bottomLeft = c.label+Size-1;
-    //if (bottomLeft<N) {
-    //  myNeighbor = current[bottomLeft];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check bottom neighbor
-    //int bottom = c.label+Size;
-    //if (bottom<N) {
-    //  myNeighbor = current[bottom];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //// check bottom-right neighbor
-    //int bottomRight = c.label+Size+1;
-    //if (bottomRight<N) {
-    //  myNeighbor = current[bottomRight];
-    //  if (myNeighbor.state) {
-    //    numAliveNeighbors++;
-    //  }
-    //}
-
-    //System.out.println("Cell "+c.label+" has "+numAliveNeighbors+" alive neighbors");
     if (numAliveNeighbors<2) {
       d.death();
     } else if (numAliveNeighbors==3) {
-      //System.out.println("Update2");
       d.alive();
     } else if (numAliveNeighbors>3) {
-      //System.out.println("Update3");
       d.death();
     }
     else if(numAliveNeighbors==2&&c.state) { d.alive(); }
@@ -237,16 +129,9 @@ public class Life {
 
   public Cell[][] board;
   public Cell[][] fBoard;
-  //public  Cell[] current;
-  //public  Cell[] future;
 
   public Life() {
     int N = Size*Size;
-    //displayInitBoard();
-
-    //board = new Cell[Size][Size];
-    //current = new Cell[N];
-    //future = new Cell[N];
 
     board = new Cell[Size][Size];
     fBoard = new Cell[Size][Size];
@@ -254,11 +139,6 @@ public class Life {
 
     for (int y=0; y<Size; y++) {
       for (int x=0; x<Size; x++) {
-        //System.out.println("x is: "+x+" y is: "+y);
-        //Cell c = new Cell(x, y);
-        //System.out.println("label is:"+c.label);
-        //board[y][x] = c;
-        //current[y*Size+x] = c;
         board[y][x] = new Cell(x,y);
       }
     }
@@ -268,11 +148,7 @@ public class Life {
       int y = randomGenerator.nextInt(Size);
       int x = randomGenerator.nextInt(Size);
 
-      //Cell c = current[rand];
-      //c.state = true;
-      //current[rand] = c;
-     // current[rand].state = true;
-       board[y][x].state=true;
+      board[y][x].state=true;
     }
   }
 }
