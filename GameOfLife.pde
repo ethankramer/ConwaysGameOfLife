@@ -36,9 +36,9 @@ public class Cell {
   }
 
   public Cell(int posX, int posY) {
-    state: alive == true, dead == false
-    label: index = y*Size + x
-    initialize each cell as dead
+    //state: alive == true, dead == false
+    //label: index = y*Size + x
+    //initialize each cell as dead
     state = false;
     x = posX;
     y = posY;
