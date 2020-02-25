@@ -28,5 +28,6 @@ Each cell is either "alive" or dead" depending on the "neighbor" cells. Each cel
   GameOfLifeEXAMPLE.png is a sample of 4 images from one randomly generated grid, aligned side by side, to demonstrate the 
   transition between generations and eventually reaching equilibrium in the final image (right most image).
   
-    - These 4 generations are not consecutive, the process of reaching equilibrium can take hundreds to thousands of generations.
+  * These 4 generations are not consecutive, the process of reaching equilibrium can take 
+  hundreds to thousands of generations.
     
